@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>homepage</title>
+    <script src="./js/navbar.js"></script>
+
 </head>
 
 <body>
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+<div class="topnav" id="myTopnav">
     <a href="index.html" class="w3-bar-item w3-button">Julie Wang</a>
-    <!-- Right-sided navbar links. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-      <a href="resume.html" class="w3-bar-item w3-button">Resume</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-    </div>
-  </div>
+  <a href="#projects">Projects</a>
+  <a href="resume.html">Resume</a>
+  <a href="#contact">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
 
 <!-- Header -->
@@ -90,8 +91,6 @@
 </footer>
 
 </body>
-</html>
 
-    
-</body>
+
 </html>
