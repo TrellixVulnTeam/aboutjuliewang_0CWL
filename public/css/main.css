@@ -35,29 +35,39 @@ nav .btn:hover{
 .btn.new-article:hover{
     background-color: ghostwhite;
 }
+
+.btn.projects {
+    padding: 10px;
+    border: 2px black solid;
+    border-radius: 5px;
+    background-color: hsl(6, 93%, 71%,.7);
+    text-decoration: none;
+    box-shadow: black 3px 3px 3px;
+    position: fixed;
+}
+
+.btn.btn.projects:hover {
+    background-color: hsl(240, 100%, 99%,.7);
+}
 /* HEADERS */
 header.home{
     background-size: cover;
-    padding: 60px 60px 10px 60px;
 }
 
 header.rd{
     background-size: cover;
-    padding: 60px 60px 10px 60px;
     background-color: lavender;
     height: 90vh;
 }
 
 header.blog{
     background-size: cover;
-    padding: 60px 60px 10px 60px;
     background-color: hsl(180, 100%, 30%)  ;
 }
 
 header.projects{
     background-size: cover;
-    padding: 60px 60px 10px 60px;
-    background-color: lightslategray;
+    background-color: bisque;
 }
 /* SECTIONS */
 section.cover{
@@ -79,20 +89,47 @@ section.overview{
     margin: 32px;
 }
 
-.card.rd{
-    display: block;
-    width: 50vh;
-    float:left;
-    padding: 16px 32px;
-    margin: 16px;
-    text-decoration: none;
-    border-radius: 10px;
+
+.flexbox-container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: bisque;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 
 
 }
 
-.card.rd:hover{
+.flex-item {
     background-color: salmon;
     box-shadow: darkgray 8px 8px 8px;
+    border: #121212 2px solid;
+    margin: 10px;
+    padding: 16px 32px;
+    height: 350px;
+    width: 350px;
+    text-decoration: none;
+}
+.grid-container{
+    display: grid;
+     grid-template-rows: auto 60px 40px;
+}
+
+
+
+
+.grid-item-1{
+    text-align: end;
+    padding: 16px 16px;
+
+}
+
+.grid-item-2{
+    padding-left: 60px;
+
+}
+.grid-item-3{
+    padding-left: 60px;
 
 }
