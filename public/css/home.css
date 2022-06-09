@@ -1,0 +1,98 @@
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+}
+
+/* BUTTONS */
+nav .btn{
+    text-decoration: none;
+    font-size: medium;
+    padding-right: 16px;
+    font-weight: bold;
+    color: salmon;
+}
+
+nav .btn:hover{
+    text-decoration: underline;
+    color: #121212;
+}
+
+.btn.name-logo{
+    text-decoration: none;
+    font-size: xx-large;
+    padding-right: 16px;
+    font-weight: bold;
+}
+
+.btn.new-article{
+    padding: 10px;
+    border: 2px black solid;
+    border-radius: 5px;
+    background-color: salmon;
+    box-shadow: black 3px 3px 3px;
+}
+
+.btn.new-article:hover{
+    background-color: ghostwhite;
+}
+/* HEADERS */
+header.home{
+    background-size: cover;
+    padding: 60px 60px 10px 60px;
+}
+
+header.rd{
+    background-size: cover;
+    padding: 60px 60px 10px 60px;
+    background-color: lavender;
+    height: 90vh;
+}
+
+header.blog{
+    background-size: cover;
+    padding: 60px 60px 10px 60px;
+    background-color: hsl(180, 100%, 30%)  ;
+}
+
+header.projects{
+    background-size: cover;
+    padding: 60px 60px 10px 60px;
+    background-color: lightslategray;
+}
+/* SECTIONS */
+section.cover{
+    text-align: center;
+}
+
+section{
+    padding: 60px;
+}
+
+section.overview{
+    text-align: left;
+
+}
+
+.articles.w3-panel{
+    border: black 2px solid;
+    padding: 16px 32px;
+    margin: 32px;
+}
+
+.card.rd{
+    display: block;
+    width: 50vh;
+    float:left;
+    padding: 16px 32px;
+    margin: 16px;
+    text-decoration: none;
+    border-radius: 10px;
+
+
+}
+
+.card.rd:hover{
+    background-color: salmon;
+    box-shadow: darkgray 8px 8px 8px;
+
+}
