@@ -62,12 +62,12 @@ header.rd{
 
 header.blog{
     background-size: cover;
-    background-color: hsl(180, 100%, 30%)  ;
+    background-color: hsl(180, 90%, 35%)  ;
 }
 
 header.projects{
     background-size: cover;
-    background-color: bisque;
+    background-color: rgb(255, 184, 80);
 }
 /* SECTIONS */
 section.cover{
@@ -82,54 +82,46 @@ section.overview{
     text-align: left;
 
 }
-
 .articles.w3-panel{
     border: black 2px solid;
     padding: 16px 32px;
     margin: 32px;
 }
 
-
-.flexbox-container{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: bisque;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-
-
-}
-
-.flex-item {
-    background-color: salmon;
-    box-shadow: darkgray 8px 8px 8px;
-    border: #121212 2px solid;
-    margin: 10px;
-    padding: 16px 32px;
-    height: 350px;
-    width: 350px;
-    text-decoration: none;
-}
+/* HEADER GRID */
 .grid-container{
     display: grid;
      grid-template-rows: auto 60px 40px;
 }
 
-
-
-
 .grid-item-1{
     text-align: end;
     padding: 16px 16px;
-
 }
 
 .grid-item-2{
     padding-left: 60px;
-
 }
 .grid-item-3{
     padding-left: 60px;
+
+}
+
+/* PROJECTS GRID */
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    height: fit-content;
+    justify-content: space-evenly;
+    margin: 60px;
+}
+
+.projects-card{
+    border: 1px gray black solid;
+    border-radius: 5px;
+    box-shadow: #121212 0px 2px 5px 0px;
+    padding: 1rem;
+    text-decoration: none;
 
 }
