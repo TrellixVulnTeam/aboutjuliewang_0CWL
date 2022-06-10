@@ -4,7 +4,7 @@ class myNavbar extends HTMLElement {
         this.innerHTML =`
             <nav>
                 <a class="btn" href="/about">ABOUT</a>
-                <a class="btn" href="/projects/r&d-credits">PROJECTS</a>
+                <a class="btn" href="/projects">PROJECTS</a>
                 <a class="btn" href="/articles">WRITING</a>
             </nav>
         `
@@ -19,9 +19,9 @@ class myHeader extends HTMLElement {
         this.innerHTML =`
         <div class="grid-container">
     <div class="grid-item grid-item-1">
-      <i href="files/juliewang_resume.pdf" class='fab fa-linkedin' style='font-size:30px'></i><br>
-      <i class="material-icons" style="font-size:30px">email</i><br>
-      <i class='far fa-file-alt' style='font-size:36px'></i>
+      <a href="https://www.linkedin.com/in/juliewang-us/" target="_blank"><i class='fab fa-linkedin' style='font-size:30px'></i></a> <br>
+      <a href="mailto:juliewang94@gmail.com"><i class="material-icons" style="font-size:30px">email</i></a><br>
+      <a href="/files/juliewang_resume.pdf" target="_blank"><i class='far fa-file-alt' style='font-size:36px'></i></a>
     </div>
     
     <div class="grid-item grid-item-2">

@@ -4,17 +4,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* BUTTONS */
+
+/* SOCIAL MEDIA ICONS */
+i {
+    color: rgb(46, 79, 79);
+
+}
+
+i:hover{
+    transform: translateY(5px);
+    text-shadow: 0px 1px 2px whitesmoke;
+}
+
 nav .btn{
     text-decoration: none;
     font-size: medium;
     padding-right: 16px;
     font-weight: bold;
-    color: salmon;
+    color: darkslategray;
+
 }
 
 nav .btn:hover{
     text-decoration: underline;
     color: #121212;
+
 }
 
 .btn.name-logo{
@@ -50,19 +64,16 @@ nav .btn:hover{
     background-color: hsl(240, 100%, 99%,.7);
 }
 /* HEADERS */
-header.home{
-    background-size: cover;
-}
 
 header.rd{
-    background-size: cover;
     background-color: lavender;
-    height: 90vh;
 }
-
+.rd{
+    background-color: lavender;
+}
 header.blog{
     background-size: cover;
-    background-color: hsl(180, 90%, 35%)  ;
+    background-color: hsl(180, 90%, 35%);
 }
 
 header.projects{
@@ -123,5 +134,37 @@ section.overview{
     box-shadow: #121212 0px 2px 5px 0px;
     padding: 1rem;
     text-decoration: none;
+}
 
+.projects-card:hover{
+    transform: translateY(-15px);
+}
+
+/* PAGE ANIMATION */
+.transition-fade{
+    opacity: 1;
+    transition: 500ms;
+}
+
+html.is-animating .transition-fade{
+    opacity: 0;
+}
+
+/* PROJECT PAGE ANIMATIONS */
+.transition-swipe-up{
+    transition: 500ms;
+    transform: translateY(0);
+}
+
+html.is-animating .transition-swipe-up{
+    transform: translateY(100px);
+}
+
+.transition-swipe-left{
+    transition: 500ms;
+    transform: translateX(0);
+}
+
+html.is-animating .transition-swipe-left{
+    transform: translateX(100px);
 }

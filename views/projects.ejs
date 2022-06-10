@@ -12,28 +12,27 @@
 
     <title>Projects</title>
     <script type=module src="/modules/modules.js"></script>
+    <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+    <script defer src="/js/animation.js"></script>
 
 </head>
 <body>
+<!-- HEADER -->
+<header class="projects">
+<my-header></my-header>
+</header>
 
-    <header class="projects">
-        <my-header></my-header>
 
-      <!--header-->
-    
-      <section class="cover">
-        <h1>Projects</h1>
-      </section>
-    </header>
-
+<!-- MAIN -->
+<main id="swup" class="transition-fade">
 <!-- PROJECTS -->
 <div class="project-container">
-  <a href='projects/r&d-credits'class="projects-card projects-card-1">
+  <a href='projects/r&d-credits'class="transition-swipe-up projects-card projects-card-1">
     <h1>R&D Tax Credit</h1>
     <p>Showcasing skills leveraged working in this niche area of tax.</p>
   </a>
 
-  <a href='#'class="projects-card projects-card-2">
+  <a href='#'class="transition-swipe-left projects-card projects-card-2">
     <h1>Personal Website</h1>
     <p>The motivation behind this website. 
     <p>Why I chose to make it from scratch.<p>
@@ -43,6 +42,8 @@
 
 
 </div>
+</main>  
+
 <footer>
 </footer>
 
