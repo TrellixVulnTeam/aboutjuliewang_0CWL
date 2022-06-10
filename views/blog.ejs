@@ -26,9 +26,12 @@
 <main id="swup" class="transition-fade">
       <section class="cover">
         <h1>Blog Articles</h1>
-        <a class="btn new-article">New Article</a>
       </section>
-    
+      <!-- NEW ARTICLE BUTTON -->
+      <div class="w3-panel">
+      <a href="articles/new" class="btn new-article">New Article</a>
+      </div>
+      <!-- ARTICLES CONTAINER -->
       <div class="articles-container">
           <% articles.forEach(article => { %>
             <div class="articles w3-panel">

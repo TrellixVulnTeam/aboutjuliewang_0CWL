@@ -152,7 +152,7 @@ html.is-animating .transition-fade{
 
 /* PROJECT PAGE ANIMATIONS */
 .transition-swipe-up{
-    transition: 500ms;
+    transition: 1000ms;
     transform: translateY(0);
 }
 
@@ -161,10 +161,17 @@ html.is-animating .transition-swipe-up{
 }
 
 .transition-swipe-left{
-    transition: 500ms;
+    transition: 1000ms;
     transform: translateX(0);
 }
 
 html.is-animating .transition-swipe-left{
     transform: translateX(100px);
+}
+
+/* FORMS */
+.form-btn{
+    border: 1px black solid;
+    margin-top: 10px;
+    width: 75px;
 }

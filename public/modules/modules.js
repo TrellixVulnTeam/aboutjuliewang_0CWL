@@ -7,9 +7,8 @@ class myNavbar extends HTMLElement {
                 <a class="btn" href="/projects">PROJECTS</a>
                 <a class="btn" href="/articles">WRITING</a>
             </nav>
-        `
+            `
     }
-
 }
 customElements.define('my-navbar',myNavbar)
 
