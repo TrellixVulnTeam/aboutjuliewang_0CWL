@@ -1,8 +1,13 @@
 const express = require('express')
+const mongoose = require('mongoose')
+const Article = require('./models/article')
+const articleRouter = require('./routes/articles')
+const projectRouter = require('./routes/projects')
 const app = express()
 
-app.use(express.static("public"))
 
+mongoose.connect('mongodb://127.0.0.1/blog')
+app.use(express.static("public"))
 app.set('view engine','ejs')
 
 // NAVIGATION PAGES
@@ -18,13 +23,25 @@ app.get('/resume',(req,res) => {
     res.render('resume')
 })
 
-// import projects router
-const projectRouter = require('./routes/projects')
-app.use('/projects', projectRouter)
+//  Articles Display Page
+app.get('/articles',(req,res) => {
+    const articles = [{
+        title: 'Test Article',
+        createdAt: new Date(),
+        description: 'test description'
+    },
+    {   title: 'Test Article 2 ',
+        createdAt: new Date(),
+        description: 'test description 2 '
+    }]
+    res.render('articles/index', {articles : articles})
+})
 
-// import articles router
-const articleRouter = require('./routes/articles')
+app.use(express.urlencoded({ extended: false }))
+
 app.use('/articles', articleRouter)
 
 
+// projects route
+app.use('/projects', projectRouter)
 app.listen(3000)

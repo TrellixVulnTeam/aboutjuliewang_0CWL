@@ -1,4 +1,4 @@
 # aboutjuliewang
 
 To install dependencies ```yarn install```
-Run Nodemon ```yarn devStart```
+Start server using nodemon ```yarn devStart```

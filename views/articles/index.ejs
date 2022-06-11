@@ -36,7 +36,7 @@
           <% articles.forEach(article => { %>
             <div class="articles w3-panel">
                 <h1><%= article.title %></h1>
-                <p class="date"><%= article.date .toLocaleDateString()%></p>
+                <p class="date"><%= article.createdAt .toLocaleDateString()%></p>
                 <p><%= article.description %></p> 
 
                 <div class="w3-panel">
