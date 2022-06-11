@@ -23,17 +23,10 @@ app.get('/resume',(req,res) => {
     res.render('resume')
 })
 
-//  Articles Display Page
-app.get('/articles',(req,res) => {
-    const articles = [{
-        title: 'Test Article',
-        createdAt: new Date(),
-        description: 'test description'
-    },
-    {   title: 'Test Article 2 ',
-        createdAt: new Date(),
-        description: 'test description 2 '
-    }]
+//  Get articles from model and sort by most recent
+app.get('/articles',async (req,res) => {
+    const articles = await Article.find().sort({
+        createdAt: 'desc'})
     res.render('articles/index', {articles : articles})
 })
 
