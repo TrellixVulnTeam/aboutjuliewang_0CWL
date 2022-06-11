@@ -31,4 +31,9 @@ router.post('/', async (req, res) =>  {
     }  
 })
 
+// find an article by its ID in the Article database and delete
+router.delete('/:id', async (req,res) => {
+    await Article.findByIdAndDelete(req.params.id)
+    res.redirect('/articles')
+})
 module.exports = router 

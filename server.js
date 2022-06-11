@@ -1,9 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const Article = require('./models/article')
+const methodOverride = require('method-override')
 const articleRouter = require('./routes/articles')
 const projectRouter = require('./routes/projects')
 const app = express()
+
 
 
 mongoose.connect('mongodb://127.0.0.1/blog')
@@ -31,6 +33,9 @@ app.get('/articles',async (req,res) => {
 })
 
 app.use(express.urlencoded({ extended: false }))
+// overide methods by using the passed parameter ('_method)
+app.use(methodOverride('_method'))
+
 
 app.use('/articles', articleRouter)
 
