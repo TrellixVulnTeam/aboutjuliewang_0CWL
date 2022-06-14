@@ -16,4 +16,5 @@ Start server using nodemon ```yarn devStart```
 * slugify: convert title to URL-friendly slug
 * swup: page transition animations 
 * method-overide: overrides the method that blog form passes (i.e. overrides GET/POST method with PATCH/DELETE method)
+* dompurify jsdom: purify html
 
