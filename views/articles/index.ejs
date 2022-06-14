@@ -40,7 +40,7 @@
                 <p class="date"><%= article.createdAt .toLocaleDateString()%></p>
                 <p><%= article.description %></p> 
                 <!-- BUTTONS -->
-                <a href="articles/<%= article.id %>" class="btn btn-primary">Read More</a>
+                <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
                 <!-- edit -->
                 <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
                 <!-- delete button: override the post method -->
