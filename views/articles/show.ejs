@@ -31,8 +31,8 @@
     <!-- EDIT & ALL ARTICLES BUTTONS -->
     <a href="/articles" class="btn btn-secondary">All Articles</a>
     <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
-    <!-- RENDER MARKDOWN -->
-    <div><%= article.markdown %></div>
+    <!-- RENDER MARKDOWN aS HTML -->
+    <div><%- article.sanitizedHtml %></div>
  </section>
 </main>
 </body>
