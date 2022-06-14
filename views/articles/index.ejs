@@ -41,11 +41,12 @@
                 <p><%= article.description %></p> 
                 <!-- BUTTONS -->
                 <a href="articles/<%= article.id %>" class="btn btn-primary">Read More</a>
-                <!-- override the post method -->
+                <!-- edit -->
+                <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+                <!-- delete button: override the post method -->
                 <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
                   <button type="submit" class="btn btn-danger"> Delete </button>
                 </form>
-
                 </div>
 
             </div>
