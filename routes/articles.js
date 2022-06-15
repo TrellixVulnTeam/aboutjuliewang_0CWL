@@ -1,7 +1,7 @@
 const express = require('express')
 const Article = require('../models/article')
-const { ROLE, users } = require('../data')
-const { authUser, authRole } = require('../basicAuth')
+const { ROLE, users } = require('../user_auth/data')
+const { authUser, authRole } = require('../user_auth/basicAuth')
 const router = express.Router()
 
 
@@ -14,7 +14,7 @@ router.get('/new', authUser, (req,res) => {
     res.render('articles/new',{ article: new Article()})
 })
 
-router.get('/edit/:id', async (req,res) => {
+router.get('/edit/:id', authUser, async (req,res) => {
     const article = await Article.findById(req.params.id)
     res.render('articles/edit', { article: article })
 })
@@ -37,7 +37,7 @@ router.put('/:id', async (req, res, next) =>  {
 }, saveArticleAndRedirect('edit'))
 
 // find an article by its ID in the Article database and delete
-router.delete('/:id', async (req,res) => {
+router.delete('/:id', authUser, async (req,res) => {
     await Article.findByIdAndDelete(req.params.id)
     res.redirect('/articles')
 })
