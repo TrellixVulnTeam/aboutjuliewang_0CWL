@@ -1,10 +1,16 @@
 const express = require('express')
 const Article = require('../models/article')
+const { ROLE, users } = require('../data')
+const { authUser, authRole } = require('../basicAuth')
 const router = express.Router()
 
 
+// 
+router.use(express.json())
+router.use(setUser)
+
 // NEW ARTICLES
-router.get('/new',(req,res) => {
+router.get('/new', authUser, (req,res) => {
     res.render('articles/new',{ article: new Article()})
 })
 
@@ -52,4 +58,12 @@ function saveArticleAndRedirect(path) {
     }
 }
 
+// middleware to set user
+function setUser(req, res, next) {
+    const userId = req.body.userId
+    if (userId) {
+        req.user = users.find(user => user.id === userId)
+    }
+    next()
+}
 module.exports = router 

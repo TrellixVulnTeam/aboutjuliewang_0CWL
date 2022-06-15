@@ -63,23 +63,7 @@ nav .btn:hover{
 .btn.btn.projects:hover {
     background-color: hsl(240, 100%, 99%,.7);
 }
-/* HEADERS */
 
-header.rd{
-    background-color: lavender;
-}
-.rd{
-    background-color: lavender;
-}
-header.blog{
-    background-size: cover;
-    background-color: hsl(180, 90%, 35%);
-}
-
-header.projects{
-    background-size: cover;
-    background-color: rgb(255, 184, 80);
-}
 /* SECTIONS */
 section.cover{
     text-align: center;

@@ -17,4 +17,4 @@ Start server using nodemon ```yarn devStart```
 * swup: page transition animations 
 * method-overide: overrides the method that blog form passes (i.e. overrides GET/POST method with PATCH/DELETE method)
 * dompurify jsdom: purify html [see documentation](https://www.npmjs.com/package/dompurify)
-
+* bcrypt: cryptography & secure password hashes
