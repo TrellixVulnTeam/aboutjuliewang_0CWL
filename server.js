@@ -5,6 +5,8 @@ const methodOverride = require('method-override')
 const Article = require('./models/article')
 const articleRouter = require('./routes/articles')
 const projectRouter = require('./routes/projects')
+const userRouter = require('./routes/users')
+
 
 mongoose.connect('mongodb://127.0.0.1/blog')
 app.use(express.static("public"))
@@ -41,5 +43,8 @@ app.use('/articles', articleRouter)
 
 // projects route
 app.use('/projects', projectRouter)
+
+app.use('/users', userRouter)
+
 
 app.listen(3000)
