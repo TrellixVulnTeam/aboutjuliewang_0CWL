@@ -25,7 +25,7 @@ mongoose.connect('mongodb://127.0.0.1/blog')
 app.set('view engine','ejs')
 app.use(express.static("public"))
 app.use(session({
-    secret: "verygoodsecret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
   }))
@@ -36,13 +36,6 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
-// NAVIGATION PAGES
-
-// app.post('/users/login', passport.authenticate('local', {
-//     successRedirect: '/users',
-//     failureRedirect: 'login',
-//     failureFlash: true
-//   }))
   
 app.get('/',(req,res) => {
     res.render('index')
@@ -61,19 +54,7 @@ app.get('/logout', async function (req, res) {
     res.redirect('/users/login');
   });
 
-//  Get articles from model and sort by most recent
-app.get('/articles',async (req,res) => {
-    const articles = await Article.find().sort({
-        createdAt: 'desc'})
-    res.render('articles/index', {articles : articles})
-})
 
-
-// app.post('/users/login', checkNotAuthenticated, passport.authenticate('local', {
-//     successRedirect: '/users',
-//     failureRedirect: '/users/register',
-//     failureFlash: true
-//   }))
 
 app.use('/articles', articleRouter)
 app.use('/users', userRouter)

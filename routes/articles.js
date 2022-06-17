@@ -9,6 +9,13 @@ router.use(express.json())
 router.use(setUser)
 
 // NEW ARTICLES
+
+router.get('/',async (req,res) => {
+    const articles = await Article.find().sort({
+        createdAt: 'desc'})
+    res.render('articles/index', {articles : articles})
+})
+
 router.get('/new', isLoggedIn, (req,res) => {
     res.render('articles/new',{ article: new Article()})
 })
