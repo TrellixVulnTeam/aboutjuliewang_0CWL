@@ -20,7 +20,7 @@ const initializePassport = require('./user_auth/passport-config')
 const { isLoggedIn, isLoggedOut } = require('./user_auth/basicAuth')
 
 // db
-mongoose.connect('mongodb://127.0.0.1/blog')
+mongoose.connect(process.env.DATABASE_URL)
 
 // middleware
 app.set('view engine','ejs') 
