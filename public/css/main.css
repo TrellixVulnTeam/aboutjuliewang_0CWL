@@ -5,6 +5,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* BUTTONS */
 
+.button {
+    display: block;
+    border-radius: 2px ;
+    background-color: pink;
+    text-decoration: none;
+    width: 100px;
+
+}
 /* SOCIAL MEDIA ICONS */
 i {
     color: rgb(46, 79, 79);
@@ -90,8 +98,16 @@ section.overview{
 }
 
 .grid-item-1{
-    text-align: end;
-    padding: 16px 16px;
+    display: flex;
+    flex-direction: column;
+    /* horizontal */
+    align-items: flex-end;
+    justify-content: space-evenly;
+    padding: 16px;
+}
+
+.github{
+    padding-bottom: 10px;
 }
 
 .grid-item-2{
@@ -158,4 +174,8 @@ html.is-animating .transition-swipe-left{
     border: 1px black solid;
     margin-top: 10px;
     width: 75px;
+}
+
+.linkedin{
+    padding: 32px 0px;
 }

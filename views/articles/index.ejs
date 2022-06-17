@@ -43,10 +43,6 @@
                 <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
                 <!-- edit -->
                 <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
-                <!-- delete button: override the post method -->
-                <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                  <button type="submit" class="btn btn-danger"> Delete </button>
-                </form>
                 </div>
 
             </div>

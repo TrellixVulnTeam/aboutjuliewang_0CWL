@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-    <title>Blog</title>
+    <title><%= title %> </title>
     <script type=module src="/modules/modules.js"></script>
     <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
     <script defer src="/js/animation.js"></script>
@@ -20,28 +20,46 @@
 </head>
 <body>
 <!--header-->
-    <header class="blog">
+    <header>
       <my-header></my-header>
     </header>
 
 <main id="swup" class="transition-fade">
-      <section class="cover">
-        <h1>Users Admin</h1>
+      <section class="w3-center w3-panel">
+        <h1>You are logged in as [name]</h1>
+        <a class= "btn-danger btn" href="/logout">Logout</a>
       </section>
-      <!-- NEW ARTICLE BUTTON -->
-      <div>
-          <a href="/logout">Logout</a>
-          <a href="/users/register">create new user</a>
+      <!--ARTICLES CONTAINER -->
+        <div class="articles w3-panel">
+          <h1>Articles Dashboard</h1>
+          <a class="btn-primary btn" href="/articles/new"> new article</a>
+          <hr>
+          <% articles.forEach(article => { %>
+                <h2><%= article.title %></h2>
+                <p class="date"><%= article.createdAt .toLocaleDateString()%></p>
+                <p><%= article.description %></p> 
+                <!-- BUTTONS -->
+                <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
+                <!-- edit -->
+                <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+                <!-- delete button: override the post method -->
+                <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                  <button type="submit" class="btn btn-danger"> Delete </button>
+                </form>
+                <hr>
 
+          <% }) %>
+        </div>
+      <!-- USER CONTAINER -->
+      <div class="w3-panel articles">
+        <div><h1>User Dashboard</h1>
+        <a class="btn-primary btn" href="/users/register"> create new user</a>
       </div>
-
-      <!-- ARTICLES CONTAINER -->
-      <div class="w3-panel">
+        <hr>
           <% users.forEach(user => { %>
                 <p>username: <%= user.username %></p>
                 <p>role: <%= user.role %></p>
-                <p>role: <%= user.id %></p>
-                <p>password: <%= user.password %></p>
+                <p>id: <%= user.id %></p>
                 <p>date created: <%= user.createdAt .toLocaleDateString() %></p>
                                 <!-- delete button: override the post method -->
                 <form action="/users/<%= user.id %>?_method=DELETE" method="POST" class="d-inline">
@@ -49,8 +67,6 @@
                 <hr>
           <% }) %>
         </div>
-
-      </section>
     </main>
 </body>
 </html>

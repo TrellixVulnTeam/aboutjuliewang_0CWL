@@ -5,6 +5,7 @@ const passport = require('passport')
 const flash = require('express-flash')
 const methodOverride = require('method-override')
 const User = require('../models/user')
+const Article = require('../models/article')
 const { isLoggedIn, isLoggedOut } = require('../user_auth/basicAuth')
 const initializePassport = require('../user_auth/passport-config')
 initializePassport()
@@ -12,7 +13,13 @@ initializePassport()
 router.get('/', isLoggedIn, async (req, res) =>
 { 
     const users = await User.find()
-    res.render('users', {users: users})
+    const articles = await Article.find().sort({
+      createdAt: 'desc'})
+    res.render('users', {
+      users: users,
+      title: "dashboard",
+      articles: articles 
+    })
 })
 
 router.get('/login', (req, res) => {
