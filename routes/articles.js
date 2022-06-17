@@ -1,20 +1,19 @@
 const express = require('express')
 const Article = require('../models/article')
 const { ROLE, users } = require('../user_auth/data')
-const { authUser, authRole } = require('../user_auth/basicAuth')
+const { isLoggedIn, isLoggedOut, authUser, authRole, checkNotAuthenticated, checkAuthenticated } = require('../user_auth/basicAuth')
 const router = express.Router()
-
 
 // 
 router.use(express.json())
 router.use(setUser)
 
 // NEW ARTICLES
-router.get('/new', authUser, (req,res) => {
+router.get('/new', isLoggedIn, (req,res) => {
     res.render('articles/new',{ article: new Article()})
 })
 
-router.get('/edit/:id', authUser, async (req,res) => {
+router.get('/edit/:id', isLoggedIn, async (req,res) => {
     const article = await Article.findById(req.params.id)
     res.render('articles/edit', { article: article })
 })
@@ -37,10 +36,11 @@ router.put('/:id', async (req, res, next) =>  {
 }, saveArticleAndRedirect('edit'))
 
 // find an article by its ID in the Article database and delete
-router.delete('/:id', authUser, async (req,res) => {
+router.delete('/:id', isLoggedIn, async (req,res) => {
     await Article.findByIdAndDelete(req.params.id)
     res.redirect('/articles')
 })
+
 
 function saveArticleAndRedirect(path) {
     return async (req, res) => {
@@ -66,4 +66,5 @@ function setUser(req, res, next) {
     }
     next()
 }
+
 module.exports = router 

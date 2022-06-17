@@ -27,7 +27,9 @@
 <section id="swup" class="transition-fade">
 
 <h1>Login</h1>
-
+<% if (messages.error) { %>
+  <%= messages.error %>
+<% } %>
 <form action="/users/login" method="POST">
   <div>
     <label for="username">Username</label>
@@ -39,7 +41,6 @@
   </div>
   <button type="submit">Login</button>
 </form>
-<a href="/users/register">Register</a>
 
 </section>
 </body>

@@ -1,43 +1,61 @@
 const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcrypt')
-
-const users = []
-
-router.get('/', (req, res) =>
-{
-    res.render('users', {name: 'Julie'})
-})
-
-router.get('/login', (req, res) =>
-{
-    res.render('users/login')
-})
-
-
-router.post('/login', (req, res) =>
-{
-})
+const passport = require('passport')
+const flash = require('express-flash')
+const methodOverride = require('method-override')
+const User = require('../models/user')
+const { isLoggedIn, isLoggedOut } = require('../user_auth/basicAuth')
+const initializePassport = require('../user_auth/passport-config')
+initializePassport()
  
-// register users
-router.get('/register', (req, res) =>
-{
-    res.render('users/register')
+router.get('/', isLoggedIn, async (req, res) =>
+{ 
+    const users = await User.find()
+    res.render('users', {users: users})
 })
+
+router.get('/login', (req, res) => {
+  res.render('users/login.ejs')
+})
+
+
+router.get('/register', isLoggedIn, (req, res) => {
+  res.render('users/register.ejs')
+})
+
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/users',
+    failureRedirect: 'login',
+    failureFlash: true
+  }))
 
 router.post('/register', async (req, res) => {
-    try {
-      const hashedPassword = await bcrypt.hash(req.body.password, 10)
-      users.push({
-        id: Date.now().toString(),
+    const hashedPassword = await bcrypt.hash(req.body.password, 10)
+    let user = new User({
         username: req.body.username,
-        password: hashedPassword
+        password: hashedPassword,
+        role: req.body.role
       })
-      res.redirect('/users/login')
-    } catch {
-      res.redirect('/users/register')
-    }
-    console.log(users)
+      try {
+        user = await user.save()
+        res.redirect('/users')
+        console.log(user)
+  
+      } catch (e) {
+        console.log(e.message)
+        res.redirect('/users/register')
+      }
+    })
+
+    
+// delete
+router.delete('/:id', async (req,res) => {
+  await User.findByIdAndDelete(req.params.id)
+  res.redirect('/users')
   })
+
+
+
 
 module.exports = router
