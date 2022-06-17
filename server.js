@@ -4,6 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express')
 const app = express()
+const expressLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const flash = require('express-flash')
@@ -22,7 +23,9 @@ const { isLoggedIn, isLoggedOut } = require('./user_auth/basicAuth')
 mongoose.connect('mongodb://127.0.0.1/blog')
 
 // middleware
-app.set('view engine','ejs')
+app.set('view engine','ejs') 
+app.set('layout', 'layouts/layout')
+app.use(expressLayouts)
 app.use(express.static("public"))
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -45,16 +48,16 @@ app.get('/about',(req,res) => {
     res.render('about')
 })
 
-app.get('/resume',(req,res) => {
-    res.render('resume')
-})
+
 
 app.get('/logout', async function (req, res) {
     req.logout();
     res.redirect('/users/login');
   });
 
-
+  app.get('/test',(req,res) => {
+    res.render('test')
+})
 
 app.use('/articles', articleRouter)
 app.use('/users', userRouter)
