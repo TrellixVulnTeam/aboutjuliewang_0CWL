@@ -21,6 +21,9 @@ const { isLoggedIn, isLoggedOut } = require('./user_auth/basicAuth')
 
 // db
 mongoose.connect(process.env.DATABASE_URL)
+const db = mongoose.connection
+db.on('error', error => console.error(error))
+db.once('open', () => console.log('Connected to Mongoose'))
 
 // middleware
 app.set('view engine','ejs') 
