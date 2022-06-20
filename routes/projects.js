@@ -3,7 +3,7 @@ const router = express.Router()
 
 // Project List
 router.get('/',(req,res) => {
-    res.render('projects')
+    res.render('projects', {title: "Projects & Case Studies"})
 })
 
 // R&D Projects

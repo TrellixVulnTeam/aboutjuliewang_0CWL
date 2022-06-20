@@ -13,22 +13,22 @@ router.use(setUser)
 router.get('/',async (req,res) => {
     const articles = await Article.find().sort({
         createdAt: 'desc'})
-    res.render('articles/index', {articles : articles})
+    res.render('articles/index', {articles : articles, title: "Blog"})
 })
 
 router.get('/new', isLoggedIn, (req,res) => {
-    res.render('articles/new',{ article: new Article()})
+    res.render('articles/new',{ article: new Article(), title: "articles/new"})
 })
 
 router.get('/edit/:id', isLoggedIn, async (req,res) => {
     const article = await Article.findById(req.params.id)
-    res.render('articles/edit', { article: article })
+    res.render('articles/edit', { article: article, title: "articles/edit" })
 })
 
 router.get('/:slug', async (req,res) => {
     const article = await Article.findOne({slug: req.params.slug})
     if (article == null) res.redirect('/')
-    res.render('articles/show', { article: article })
+    res.render('articles/show', { article: article, title: "Blog" })
 })
 
 router.post('/', async (req, res, next) =>  {
