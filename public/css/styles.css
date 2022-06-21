@@ -3,6 +3,69 @@ body {font-family: "Times New Roman", Georgia, Serif;}
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display";
 }
+/* CONTAINERS */
+.flex-container {
+    display: flex;
+}
+.flex-column {
+    display: flex;
+    flex-flow: column;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row;
+}
+.small-box {
+    width: 300px;
+    height: 300px;   
+    display: block;
+    padding: 16px 32px;
+}
+
+
+.articles-container > *:hover {
+    transform: translate(-5px,-10px);
+    box-shadow: hsl(0, 0%, 36%) 8px 15px 15px 0px;
+}
+
+.featured-articles{
+    justify-content: center;
+}
+
+.articles-container{
+    flex-flow: row wrap;
+    justify-content: center;
+    overflow: scroll;
+    align-self: center;
+    height: min-content;
+    border-bottom: black 2px solid;
+}
+
+.articles-container > * {
+    background-color: hsl(203, 36%, 61%);
+    border-left: hsl(240, 60%, 25%) solid 10px;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    transition: transform 1s;
+    align-items: center;
+}
+
+/* BUTTONS */
+.my-btn{
+    text-decoration: none;
+}
+/* button icons */
+.my-btn > i {
+    width: 25px;
+}
+.my-btn-group {
+    padding-top: 16px;
+}
+.my-btn-group > * {
+    /* padding-top-left-down-right */
+    padding: 10px 24px 0px 0px;
+ } 
 
 
 /* LAYOUT */
@@ -13,10 +76,6 @@ h1, h2, h3, h4, h5, h6 {
     grid-auto-rows: auto;
     grid-template-columns: 1fr;
     width: 100vw;
-}
-
-.flex-container {
-    display: flex;
 }
 
 /* NAVBAR */
@@ -41,19 +100,13 @@ nav {
     visibility: hidden;
 }
 
-
-
-
-
-/* social media links */
-#social-media-container {
-    flex-flow: column;
-    align-items: flex-end;
-    /* fxed position */
+.social-media-container.flex-column {
     position: fixed;
+    right:0;
     top:75px;
-    right: 0px;
-    z-index: 100;
+    font-size: 2rem;
+    z-index: 100; 
+
 }
 
 .intro {
@@ -69,39 +122,16 @@ section {
 
 footer {
     padding: 16px 32px;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 75px;
+    align-items: center;
 }
-
-/* buttons */
-.my-btn{
-    text-decoration: none;
+.social-media-container.flex-row {
+    padding: 0%;
+    margin: 0%;
+    visibility: hidden;
+    font-size: 1.5rem;
 }
-.my-btn-group {
-    padding-right: 16px;
-    padding-top: 16px;
-}
-
-.my-btn-group > * {
-    padding: 10px 24px;
- } 
-
-/* button icons */
-.my-btn > i {
-    width: 25px;
-    font-size: 2rem;
-}
-
-
-/* #logo{
-    background-color: rgb(217, 244, 245);
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 32px;
-    text-align: center;
-    align-self: center;
-} */
-
 
 
 /* If the screen size is 600px wide or less, hide the element */
@@ -121,8 +151,11 @@ footer {
         padding: 16px 32px;
         padding-top: 30%;
     }
-    #social-media-container {
+    .social-media-container.flex-column {
        display: none;
     }
-}
+    .social-media-container.flex-row {
+        visibility: visible;
+     }
+ }
 

@@ -7,11 +7,12 @@
 #home-intro > *{
     margin: 0px;
     max-width: 650px;
-    text-align: start;
+    text-align: flex-start;
 }
+
+
 /* BASICS */
 .grid-item-4 {
-    flex-flow: row;
     align-items: center;
     justify-content: flex-end;
     width: 100%;
@@ -19,9 +20,7 @@
 }
 .grid-item-4 .large-box{
     background-color: hsl(270, 23%, 70%);
-    /* border: 1px black solid; */
     align-self: start;
-    /* flex-grow: 4; */
     height: 85vh;
     padding: 100px;
     transform: translateY(-15%);
@@ -31,13 +30,17 @@
 }
 .grid-item-4 .small-box{
     background-color: hsl(203, 36%, 61%);
-    transform: translate(30%,-10%);
-    z-index: 10;
+    /* transform: translate(30%,-10%); */
     /* flex-grow: 1; */
+    margin-right: 20px;
     text-align: start;
     color: white;
     padding: 16px;
+    border-left: yellow solid 10px;
+    border-radius: 20px;
+
 }
+
 /* PROJECT-1 */
 .grid-item-5 {
     flex-flow: row;
@@ -61,7 +64,13 @@
     text-align: start;
     color: white;
     padding: 16px;
+    border-left: 5px solid rgb(0, 0, 0,.5);
+    border-bottom: 5px solid rgb(0, 0, 0, .5);
+
 }
+
+
+
 /* FEATURED ARTICLES */
 .grid-item-6 {
     flex-flow: column;
@@ -79,6 +88,14 @@ header.flex-item{
 .grid-item-6 .small-box {
     margin: 10px;
     background-color: hsl(43, 100%, 70%);
+    transition: transform 1s;
+    border-radius: 20px;
+
+}
+
+.grid-item-6 .small-box:hover {
+    transform: translate(-5px,-10px);
+    box-shadow: hsl(0, 0%, 36%) 8px 15px 15px 0px;
 }
 
 /* FONT & COLORS */
@@ -86,10 +103,6 @@ header.flex-item{
     font-size: 5rem;
 }
 /* COMPONENTS */
-.small-box {
-    width: 300px;
-    height: 300px;   
-}
 .accent-2{
     font-weight: bold;
 }

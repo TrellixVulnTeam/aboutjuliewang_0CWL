@@ -1,8 +1,10 @@
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/blog.css">
 
+<script type=module  src="/modules/modules.js"></script>
 
-<section class="intro grid-item-3 flex-container intro" id="home-intro">
+<section class="grid-item-3 flex-container intro" id="home-intro">
   <div>Hi, my name is</div>
   <div id="name">Julie Wang</div>
   <p><span>I have <span class="accent-2">5 years</span> of experience as a <span class="accent-2">tax consultant</span>,
@@ -13,8 +15,7 @@
   </div>
 </section>
 
-
-<section class="grid-item-4 project-box flex-container">
+<section class="grid-item-4 flex-container project-box">
   <div class="small-box"> 
     <h1>The Basics</h1>
     <p>Links to my resume, social media, & email address.</p>
@@ -27,12 +28,15 @@
   <div class="large-box"> 
   </div>
   <div class="small-box"> 
-    <h1>The Basics</h1>
-    <p>Links to my resume, social media, & email address.</p>
+    <h1>This Website</h1>
+    <p>My first web development project, featuring:
+      <li>Markdown blog, using Node.js, Express, And MongoDB</li>
+      <li>User Authentication & Login System (Passport.js)</li>
+    </p>
   </div>
 </section>
 
-<section class="grid-item-6 featured-articles flex-container">
+<!-- <section class="grid-item-6 flex-container featured-articles">
   <header class="flex-item">
      <h1>Featured Articles</h1>
   </header>
@@ -41,8 +45,8 @@
     <div class="small-box"> Project 1 Box </div>
     <div class="small-box"> Project 1 Box </div>
   </section>
-</section>
+</section> -->
+
+<featured-articles></featured-articles>
 
     
-  </div>
-</section>

@@ -1,72 +1,20 @@
-.sticky {
-position: sticky;
-top: 0;
-}
 
-body {font-family: "Times New Roman", Georgia, Serif;}
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display";
+/* COLORS */
+.accent {
+    color: hsl(164, 60%, 83%);
 }
-
+.accent-2 {
+    color:white;
+}
 body {
-    background-color: hsl(200, 19%, 15%);
-    color: hsl(232, 17%, 75%);
     background-image: linear-gradient(to bottom right, hsl(200, 19%, 10%),hsl(200, 19%, 15%), hsl(200, 19%, 20%));
 }
 
-/* SOCIAL MEDIA ICONS */
 
 i:hover{
     transform: translateY(5px);
 }
 
-nav.flex-container{
-    display: flex;
-}
-
-nav .btn{
-    text-decoration: none;
-    font-size: medium;
-    padding-right: 16px;
-    font-weight: bold;
-    color: hsl(232, 17%, 75%);
-}
-
-nav .btn:hover{
-    text-decoration: underline;
-    color: hsl(245, 41%, 95%);
-
-}
-
-.btn.name-logo{
-    text-decoration: none;
-    font-size: xx-large;
-    padding-right: 16px;
-    font-weight: bold;
-}
-
-/* HEADER GRID */
-.grid-container{
-    display: grid;
-     grid-template-rows: auto 60px 40px;
-}
-.grid-item-1{
-    display: flex;
-    flex-direction: column;
-    /* horizontal */
-    align-items: flex-end;
-    justify-content: space-evenly;
-}
-
-.github{
-    padding-bottom: 10px;
-}
-.grid-item-2{
-    padding-left: 60px;
-}
-.grid-item-3{
-    padding-left: 60px;
-}
 
 /* PAGE ANIMATION */
 .transition-fade{
@@ -103,18 +51,5 @@ html.is-animating .transition-swipe-left{
     margin-top: 10px;
     width: 75px;
 }
-.linkedin{
-    padding: 32px 0px;
-}
 
-/* .container{
-} */
 
-/* COLORS */
-.accent {
-    color: hsl(164, 60%, 83%);
-}
-
-.accent-2 {
-    color:white;
-}

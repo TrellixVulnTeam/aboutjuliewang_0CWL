@@ -1,19 +1,31 @@
 
-<!-- ARTICLES CONTAINER -->
-<section class="my-container grid-item-1 flex-container intro" id="about-intro">
-    <h1>Blog</h1>
-</section>
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/blog.css">
 
-<section class="my-container flex-container ">
+<!-- ARTICLES CONTAINER -->
+
+<header class="intro">
+  <h1>Blog</h1>
+</header>
+
+<featured-articles></featured-articles>
+
+
+<div class="flex-column all-articles">
+
+    <h1>All Articles</h1>
+    <div>
     <% articles.forEach(article => { %>
-        <div class="articles w3-panel">
-          <h1><%= article.title %></h1>
+          <%= article.title %>
           <p class="date"><%= article.createdAt .toLocaleDateString()%></p>
           <p><%= article.description %></p> 
           <!-- BUTTONS -->
           <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
-          <!-- edit -->
-          <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
-        </div>
+          <hr>
       <% }) %>
+    </div>
+  </div>
 </section>
+</section>
+
+  
