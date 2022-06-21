@@ -1,9 +1,11 @@
 
 
-/* LAYOUT */
-#home-intro {
-    background-color: hsl(43, 100%, 70%);
+#logo {
+    opacity: 0;
+    transition: opacity 1s;
 }
+  
+
 #home-intro > *{
     margin: 0px;
     max-width: 650px;
@@ -19,7 +21,6 @@
     text-align: end;
 }
 .grid-item-4 .large-box{
-    background-color: hsl(270, 23%, 70%);
     align-self: start;
     height: 85vh;
     padding: 100px;
@@ -36,7 +37,7 @@
     text-align: start;
     color: white;
     padding: 16px;
-    border-left: yellow solid 10px;
+    /* border-left: yellow solid 10px; */
     border-radius: 20px;
 
 }
@@ -49,7 +50,7 @@
     text-align: end;
 }
 .grid-item-5 .large-box{
-    background-color: hsl(180, 40%, 60%);
+    /* background-color: hsl(180, 40%, 60%); */
     align-self: start;
     height: 85vh;
     padding: 100px;
@@ -87,7 +88,7 @@ header.flex-item{
 }
 .grid-item-6 .small-box {
     margin: 10px;
-    background-color: hsl(43, 100%, 70%);
+    /* background-color: hsl(43, 100%, 70%); */
     transition: transform 1s;
     border-radius: 20px;
 
@@ -108,10 +109,11 @@ header.flex-item{
 }
 
 .and.accent{
-    color: hsl(270, 50%, 70%);
+    /* color: hsl(270, 50%, 70%); */
     font-size: 3rem;
 
 }
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 700px) {
     .grid-item-4 {
@@ -119,7 +121,7 @@ header.flex-item{
         /* background-size: cover; */
         flex-flow: column nowrap;
         /* flex-grow: 1; */
-        background-color: hsl(270, 23%, 70%);
+        /* background-color: hsl(270, 23%, 70%); */
     }
 
     .grid-item-4 .large-box{

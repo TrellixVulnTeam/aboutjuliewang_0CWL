@@ -7,23 +7,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="/css/styles.css">
-
+  <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+  <link rel="stylesheet" href="/css/main.css">
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-  <script type=module src="/modules/modules.js"></script>
+  <!-- <script type=module src="/modules/modules.js"></script> -->
   <script defer src="/js/animation.js"></script>
   <title><%= title %></title>
 </head>
 
 <body>
+
 <!--GRID LAYOUT-->
-<div class="my-container grid-container">
-  <!-- NAVBAR & LOGO -->
-  <my-navbar></my-navbar>
-  <!-- SOCIAL MEDIA LINKS -->
+<div class="container grid-container">
+  
+  <%- include('../partials/_btn.ejs')%>
+
+  <%- include('../partials/_navbar.ejs')%>
   <social-media-container-column></social-media-container-column>
   <!-- MAIN -->
+  <div class="inner-container">
   <%- body -%>
+  </div>
   <!-- FOOTER -->
   <my-footer></my-footer>
 </div>

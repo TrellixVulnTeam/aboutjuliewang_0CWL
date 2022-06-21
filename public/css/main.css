@@ -1,55 +1,33 @@
+@import 'shared/variables.css';
+@import 'shared/fonts.css';
+@import 'shared/navbar.css';
+@import 'shared/buttons.css';
 
-/* COLORS */
-.accent {
-    color: hsl(164, 60%, 83%);
+:root {
+  font-family: 'Gotham Rounded';
+  font-size: 20px;
+  color: var(--color-text-light);
 }
-.accent-2 {
-    color:white;
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
+
 body {
-    background-image: linear-gradient(to bottom right, hsl(200, 19%, 10%),hsl(200, 19%, 15%), hsl(200, 19%, 20%));
+  background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light));
 }
 
-
-i:hover{
-    transform: translateY(5px);
+.container {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 3rem;
 }
 
-
-/* PAGE ANIMATION */
-.transition-fade{
-    opacity: 1;
-    transition: 500ms;
+.inner-container {
+  margin: 0 2rem;
 }
 
-html.is-animating .transition-fade{
-    opacity: 0;
+.page-header {
+  font-size: 2rem;
+  font-weight: 500;
 }
-
-/* PROJECT PAGE ANIMATIONS */
-.transition-swipe-up{
-    transition: 1000ms;
-    transform: translateY(0);
-}
-
-html.is-animating .transition-swipe-up{
-    transform: translateY(100px);
-}
-
-.transition-swipe-left{
-    transition: 1000ms;
-    transform: translateX(0);
-}
-
-html.is-animating .transition-swipe-left{
-    transform: translateX(100px);
-}
-
-/* FORMS */
-.form-btn{
-    border: 1px black solid;
-    margin-top: 10px;
-    width: 75px;
-}
-
-

@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .articles-container > * {
     background-color: hsl(203, 36%, 61%);
-    border-left: hsl(240, 60%, 25%) solid 10px;
+    border-left: hsl(10, 40%, 50%) solid 10px;
     color: white;
     border-radius: 20px;
     margin: 10px;
@@ -82,13 +82,11 @@ h1, h2, h3, h4, h5, h6 {
 nav {
     flex-flow: row ;
     justify-content: space-between;
-    /* sticky position */
     position: fixed;
     top: 0%;
     height: 70px;
     z-index: 100; 
     width: 100%;
-    background-color: hsl(43, 100%, 70%);
 }
 .logo{
     font-weight: bold;
@@ -96,7 +94,7 @@ nav {
     align-self: center;
     font-family: "Playfair Display";
 }
-#menu-btn {
+.hidden {
     visibility: hidden;
 }
 

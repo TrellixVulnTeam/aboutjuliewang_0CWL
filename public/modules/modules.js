@@ -1,32 +1,14 @@
 // LAYOUT COMPONENTS
-class myNavbar extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML =`
-        <nav class="my-container flex-container grid-item-1">
-          <div class=" my-btn-group logo">
-            <a href="/" class="my-btn">JULIE WANG</a>
-          </div>
-          <div class="my-btn-group flex-container nav-links">
-            <a class="my-btn" href="/about">ABOUT</a>
-            <a class="my-btn " href="/projects">PROJECTS & CASE STUDIES</a>
-            <a class="my-btn " href="/articles">WRITING</a>
-            <a href="files/css_selector_cheatsheet.pdf" class="my-btn" id="menu-btn"><i class='fa fa-bars'></i></a> 
-          </div>
-        </nav>
-        `
-    }
-}
-customElements.define('my-navbar',myNavbar)
-
 
 class socialMediaContainer_column extends HTMLElement {
   connectedCallback() {
     this.innerHTML =  `
     <aside class="my-container flex-container flex-column my-btn-group grid-item-2 social-media-container">
-      <a href="https://www.linkedin.com/in/juliewang-us/" target="_blank" class=" my-btn"><i class='fab fa-linkedin'></i></a> 
-      <a href="mailto:juliewang94@gmail.com" class=" my-btn"><i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/juliewang-online" target="_blank" class=" my-btn"><i class='my-btn flex-item github fab fa-github'></i></a> 
-      <a href="/files/juliewang_resume.pdf" target="_blank" class=" my-btn"><i class='fas fa-file-alt'></i></a> 
+     
+    <a href="https://www.linkedin.com/in/juliewang-us/" target="_blank" class=""><i class='fab fa-linkedin'></i></a> 
+    <a href="mailto:juliewang94@gmail.com" class=""><i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/juliewang-online" target="_blank" class=""><i class='my-btn flex-item github fab fa-github'></i></a> 
+    <a href="/files/juliewang_resume.pdf" target="_blank" class=""><i class='fas fa-file-alt'></i></a> 
     </aside>
     `
   }       
@@ -36,11 +18,11 @@ customElements.define('social-media-container-column', socialMediaContainer_colu
 class socialMediaContainer_row extends HTMLElement {
   connectedCallback() {
     this.innerHTML =  `
-    <aside class="my-container flex-container flex-row my-btn-group grid-item-2 social-media-container">
-      <a href="https://www.linkedin.com/in/juliewang-us/" target="_blank" class=" my-btn"><i class='fab fa-linkedin'></i></a> 
-      <a href="mailto:juliewang94@gmail.com" class=" my-btn"><i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/juliewang-online" target="_blank" class=" my-btn"><i class='my-btn flex-item github fab fa-github'></i></a> 
-      <a href="/files/juliewang_resume.pdf" target="_blank" class=" my-btn"><i class='fas fa-file-alt'></i></a> 
+    <aside class="flex-container flex-row my-btn-group grid-item-2 social-media-container">
+      <a href="https://www.linkedin.com/in/juliewang-us/" target="_blank" class=""><i class='fab fa-linkedin'></i></a> 
+      <a href="mailto:juliewang94@gmail.com" class=""><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/juliewang-online" target="_blank" class=""><i class='my-btn flex-item github fab fa-github'></i></a> 
+      <a href="/files/juliewang_resume.pdf" target="_blank" class=""><i class='fas fa-file-alt'></i></a> 
     </aside>
     `
   }       

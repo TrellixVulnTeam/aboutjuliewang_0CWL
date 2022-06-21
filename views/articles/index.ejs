@@ -1,18 +1,16 @@
 
 <link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/blog.css">
+<link rel="stylesheet" href="/css/blog.css"> 
 
-<!-- ARTICLES CONTAINER -->
 
 <header class="intro">
   <h1>Blog</h1>
 </header>
 
-<featured-articles></featured-articles>
+<%- include('../partials/_featuredArticles.ejs')%>
 
 
 <div class="flex-column all-articles">
-
     <h1>All Articles</h1>
     <div>
     <% articles.forEach(article => { %>
