@@ -7,4 +7,6 @@
     --color-background-light: hsl(var(--color-base-hue), 100%, 16%);
     --color-text-light: hsl(var(--color-base-hue), 100%, 87%);
     --color-text-accent: hsl(var(--color-accent-hue), 100%, 87%);
+    --dark-color: #635bff;
+    --light-color: #80e9ff;
   }
