@@ -23,60 +23,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-.articles-container > *:hover {
-    transform: translate(-5px,-10px);
-    box-shadow: hsl(0, 0%, 36%) 8px 15px 15px 0px;
-}
-
-.featured-articles{
-    justify-content: center;
-}
-
-.articles-container{
-    flex-flow: row wrap;
-    justify-content: center;
-    overflow: scroll;
-    align-self: center;
-    height: min-content;
-    border-bottom: black 2px solid;
-}
-
-.articles-container > * {
-    background-color: hsl(203, 36%, 61%);
-    border-left: hsl(10, 40%, 50%) solid 10px;
-    color: white;
-    border-radius: 20px;
-    margin: 10px;
-    transition: transform 1s;
-    align-items: center;
-}
-
-/* BUTTONS */
-.my-btn{
-    text-decoration: none;
-}
-/* button icons */
-.my-btn > i {
-    width: 25px;
-}
-.my-btn-group {
-    padding-top: 16px;
-}
-.my-btn-group > * {
-    /* padding-top-left-down-right */
-    padding: 10px 24px 0px 0px;
- } 
 
 
-/* LAYOUT */
-.grid-container {
-    display: grid;
-    /* background-image: linear-gradient(to bottom right, hsl(200, 19%, 10%),hsl(200, 19%, 15%), hsl(200, 19%, 20%));  */
-    grid-gap: 20px; 
-    grid-auto-rows: auto;
-    grid-template-columns: 1fr;
-    width: 100vw;
-}
 
 /* NAVBAR */
 nav {
@@ -88,24 +36,18 @@ nav {
     z-index: 100; 
     width: 100%;
 }
+
 .logo{
     font-weight: bold;
     padding: 16px;
     align-self: center;
     font-family: "Playfair Display";
 }
+
 .hidden {
     visibility: hidden;
 }
 
-.social-media-container.flex-column {
-    position: fixed;
-    right:0;
-    top:75px;
-    font-size: 2rem;
-    z-index: 100; 
-
-}
 
 .intro {
     flex-flow: column nowrap;
@@ -118,42 +60,7 @@ section {
     height: 85vh; 
 }
 
-footer {
-    padding: 16px 32px;
-    justify-content: space-between;
-    height: 75px;
-    align-items: center;
-}
-.social-media-container.flex-row {
-    padding: 0%;
-    margin: 0%;
-    visibility: hidden;
-    font-size: 1.5rem;
-}
 
 
-/* If the screen size is 600px wide or less, hide the element */
-@media only screen and (max-width: 700px) {
-    nav a:not(:last-child) {
-        display: none;
-    }
-    #menu-btn{
-        visibility: visible;
-        display: block;
-    }
-    section {
-        padding: 16px 32px;
-    }
-    .intro {
-        justify-content: flex-start;
-        padding: 16px 32px;
-        padding-top: 30%;
-    }
-    .social-media-container.flex-column {
-       display: none;
-    }
-    .social-media-container.flex-row {
-        visibility: visible;
-     }
- }
+
 

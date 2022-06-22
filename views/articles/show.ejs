@@ -1,13 +1,17 @@
-
-<main id="swup" class="transition-fade">
-<!-- BLOG POST -->
-<section>
-    <h1><%= article.title %></h1>
-    <div class="text-muted mb-2"><%= article.createdAt .toLocaleDateString() %></div>
-    <!-- EDIT & ALL ARTICLES BUTTONS -->
+<script defer src="/js/on-scroll.js"></script>
+<header class="article-header page-header flex-column">
+<h1 class="article-title"><%=article.title%></h1>
+<p class="article-description"><%=article.description%></p>
+</header>
+<section class="btn-row flex-row">
     <a href="/articles" class="btn btn-secondary">All Articles</a>
     <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
-    <!-- RENDER MARKDOWN aS HTML -->
-    <div><%- article.sanitizedHtml %></div>
- </section>
-</main>
+</section>
+<section class="article flex-column">
+<div class="created-date"><%= article.createdAt .toLocaleDateString() %></div>
+<article class="article-text"><%- article.sanitizedHtml %></article>
+</section>
+
+
+
+

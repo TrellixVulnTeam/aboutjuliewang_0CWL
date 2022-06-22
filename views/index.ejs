@@ -1,47 +1,17 @@
-<link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/home.css">
-<link rel="stylesheet" href="/css/blog.css">
-<link rel="stylesheet" href="/css/main.css">
-
-
-<script type=module  src="/modules/modules.js"></script>
-<script src="/js/navbar.js"></script>
-
-
-<section class="grid-item-3 flex-container intro" id="home-intro">
-
-  <div>Hi, my name is</div>
-  <div id="name">Julie Wang</div>
+<script defer src="/js/on-scroll.js"></script>
+<header class="page-header flex-column homepage" id="home-intro">
+  <h1>Hey, I'm Julie</h1>
   <p><span>I have <span class="accent-2">5 years</span> of experience as a <span class="accent-2">tax consultant</span>,
     helping companies navigate the tax risks and opportunities associated with their <span class="accent-2">research & development</span> and  <span class="accent-2">mergers & acquisitions</span> activities.</span><br>
     <span class="and accent">&</span>
     <span>I like to <span class="accent-2">code</span> and <span class="accent-2">write</span> in my free time.</span>
   </p>
-  </div>
-</section>
-
-<section class="grid-item-4 flex-container project-box">
-  <div class="small-box"> 
-    <h1>The Basics</h1>
-    <p>Links to my resume, social media, & email address.</p>
-  </div>
-  <div class="large-box"> 
-  </div>
-</section>
-
-<section class="grid-item-5 project-box flex-container">
-  <div class="large-box"> 
-  </div>
-  <div class="small-box"> 
-    <h1>This Website</h1>
-    <p>My first web development project, featuring:
-      <li>Markdown blog, using Node.js, Express, And MongoDB</li>
-      <li>User Authentication & Login System (Passport.js)</li>
-    </p>
-  </div>
+</header>
+<section>
+  <%- include('partials/_featuredArticles.ejs')%>
 </section>
 
 
-<featured-articles></featured-articles>
+
 
     

@@ -1,3 +1,5 @@
+
+/* NAVBAR */
 :root {
     --nav-title-font-size: 1.5rem;
     --nav-title-font-weight: bold;
@@ -5,7 +7,7 @@
   }
   
   .logo {
-    color: var(--color-text-light);
+    color: var(--color-accent-light);
     text-decoration: none;
     font-size: var(--nav-title-font-size);
     font-weight: var(--nav-title-font-weight);
@@ -18,7 +20,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5rem;
+    padding: 16px;
   }
+
   
   .header-nav ul {
     display: flex;
@@ -32,7 +36,7 @@
   
   .header-nav li a {
     text-decoration: none;
-    color: var(--color-text-light);
+    color: var(--color-accent-light);
     font-weight: var(--nav-link-font-weight);
     padding: 1rem;
   }
@@ -41,4 +45,34 @@
     color: white;
   }
 
- 
+ /* SOCIAL MEDIA CONTAINER */
+ .social-media-container.flex-column {
+  position: fixed;
+  right:0;
+  font-size: 2rem;
+  z-index: 100; 
+  padding: 0 32px;
+}
+
+.social-media-container.flex-row {
+  padding: 0%;
+  margin: 0%;
+  visibility: hidden;
+  font-size: 1.5rem;
+}
+
+.social-media-container.flex-row > * {
+  padding-left: 1rem;
+}
+
+
+/* FOOTER */
+footer {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 95vw;
+  margin-top: 1.5rem;
+  padding: 1rem 1rem;
+}
+
