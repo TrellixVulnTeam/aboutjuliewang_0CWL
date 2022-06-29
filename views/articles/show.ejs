@@ -3,13 +3,13 @@
 <h1 class="article-title"><%=article.title%></h1>
 <p class="article-description"><%=article.description%></p>
 </header>
-<section class="btn-row flex-row">
-    <a href="/articles" class="btn btn-secondary">All Articles</a>
-    <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
-</section>
 <section class="article flex-column">
 <div class="created-date"><%= article.createdAt .toLocaleDateString() %></div>
 <article class="article-text"><%- article.sanitizedHtml %></article>
+</section>
+<section class="btn-row flex-row">
+    <a href="/articles" class="btn btn-secondary">All Articles</a>
+    <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
 </section>
 
 

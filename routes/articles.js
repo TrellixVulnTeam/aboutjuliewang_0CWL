@@ -11,7 +11,7 @@ router.get('/',async (req,res) => {
     res.render('articles', {articles : articles, title: "Blog", featuredArticles: featuredArticles})
 }) 
 
-router.get('/edit/:id', async (req, res) => {
+router.get('/edit/:id', isLoggedIn, async (req, res) => {
     const article = await Article.findById(req.params.id)
     res.render('articles/edit', { article: article })
 })

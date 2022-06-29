@@ -7,12 +7,5 @@
         visibility: visible;
      }
 
-    .featured-articles-section, .page-header, h1, .all-articles-section h2  {
-        text-align: center;
-     }
-
-     .featured-articles-container > * {
-      margin: .5rem;
-  }
    }
    

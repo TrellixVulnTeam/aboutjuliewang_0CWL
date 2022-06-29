@@ -1,41 +1,86 @@
-<!--ARTICLES CONTAINER -->
-      
+<!-- start main grid -->
+<div>
+<h1>User Dashboard</h1>
+<!-- <p>You are logged in as <span class="active-user"><%= activeUser.username %></span></p> -->
+<p>You are logged in as <span class="active-user"><%= activeUser.username %></span></p>
+
+<!-- btn panel -->
+<div class="flex-row btn-row">
 <a class="btn-primary btn" href="/articles/new"> new article</a>
-<a class="interal-link" href="files/css_selector_cheatsheet.pdf">CSS CS</a> 
-<a class="interal-link" href="files/mongodb-cheat-sheet.pdf">MongoDB CS</a>
+<a class="btn-primary btn" href="/users/register"> create new user</a>
+<a class="btn-danger btn" href="#"> logout</a>
+</div>
+
+
+<!-- START DASHBOARDS -->
+<div class="flex-row dashboards">
+<!-- articles dashboard -->
+<section class="dashboard">
+<h2>Articles Dashboard</h2>
+<div class="dashboard-container">
+<div>
 <% articles.forEach(article => { %>
-  <h2><%= article.title %></h2>
-  <p class="date"><%= article.createdAt .toLocaleDateString()%></p>
-  <p><%= article.description %></p> 
-  <p><%= article.featured %></p> 
-  <p><%= article.id %></p> 
-  <!-- BUTTONS -->
+  <h3><%= article.title %></h3>
+  <div class="flex-column">
+    <div class="collapsible">more details</div>
+    <div class="flex-column collapsible-content">
+      <span class="date"> Date created: <%= article.createdAt .toLocaleDateString()%></span>
+      <span>Description: <%= article.description %></span> 
+      <span>Featured Article? <%= article.featured %></span> 
+      <span>Article ID: <%= article.id %></span> 
+    </div>
+  </div>
+  <br>
+  <!-- btns -->
+  <div class="flex-row">
   <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
-  <!-- edit -->
   <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
-  <!-- delete button: override the post method -->
   <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
     <button type="submit" class="btn btn-danger"> Delete </button>
   </form>
+  </div>
   <hr>
-
   <% }) %>
   </div>
-      <!-- USER CONTAINER -->
-      <div class="w3-panel articles">
-        <div><h1>User Dashboard</h1>
-        <a class="btn-primary btn" href="/users/register"> create new user</a>
-      </div>
-        <hr>
+</div>
+</section>
+<!-- user dashboard -->
+<section class="dashboard">
+  <h2>User Dashboard</h2>
+  <div class="dashboard-container">
+  <div>
           <% users.forEach(user => { %>
-                <p>username: <%= user.username %></p>
-                <p>role: <%= user.role %></p>
-                <p>id: <%= user.id %></p>
-                <p>date created: <%= user.createdAt .toLocaleDateString() %></p>
-                                <!-- delete button: override the post method -->
+            <p>username: <%= user.username %></p>
+            <div class="collapsible">more details</div>
+            <div class="flex-column collapsible-content">
+                <span>role: <%= user.role %></span>
+                <span>id: <%= user.id %></span>
+                <span>date created: <%= user.createdAt .toLocaleDateString() %></span>
+                <br>
+
                 <form action="/users/<%= user.id %>?_method=DELETE" method="POST" class="d-inline">
                   <button type="submit" class="btn btn-danger"> Delete </button>
                 </form>
+              </div>
                 <hr>
           <% }) %>
-        </div>
+    </div>
+</section>
+<!-- articles dashboard -->
+<section class="dashboard">
+  <h2>Cheatsheets</h2>
+  <div class="dashboard-container">
+    <div class="flex-column">
+      <a class="btn-primary btn interal-link" href="files/css_selector_cheatsheet.pdf" target="_blank">CSS CS</a> 
+      <a class=" btn-primary btn interal-link" href="files/mongodb_cheatsheet.pdf" target="_blank">MongoDB CS</a>
+      <a class=" btn-primary btn interal-link" href="files/js_dom_cheatsheet.pdf" target="_blank">JS DOM CS</a>
+
+    </div>
+  </div>
+</section>
+  
+<!-- END DASHBOARDS -->
+      </div>
+
+<!-- end main grid -->
+    </div>

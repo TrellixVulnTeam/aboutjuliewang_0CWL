@@ -1,6 +1,6 @@
-<section class="featured-articles-section flex-column ">
+<div class="flex-column featured-articles-section">
 <h2 class="section-title">Featured Articles</h2>
-<section class="featured-articles-container flex-row">
+<div class="featured-articles-container flex-row">
   <% featuredArticles.forEach(article => { %>
   <a href="articles/<%= article.slug %>" class="article flex-column small-box">   
     <h4 class="article-title"><%= article.title %></h4>
@@ -32,5 +32,5 @@
   </div>
   </a>
   <% }) %>
-</section>
-</section>
+</div>
+</div>

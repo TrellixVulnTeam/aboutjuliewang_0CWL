@@ -13,12 +13,14 @@ initializePassport()
 router.get('/', isLoggedIn, async (req, res) =>
 { 
     const users = await User.find()
+    let activeUser = req.session.passport.user
     const articles = await Article.find().sort({
       createdAt: 'desc'})
     res.render('users', {
       users: users,
-      title: "dashboard",
-      articles: articles 
+      title: 'Dashboard',
+      articles: articles,
+      activeUser: activeUser
     })
 })
 
