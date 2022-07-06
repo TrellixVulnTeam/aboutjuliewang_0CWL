@@ -48,6 +48,12 @@
 font-size: .7rem;
 }
 
+article img {
+  border: 1px white solid;
+  max-width: 100%;
+  height: auto;
+}
+
 /* ARROW Btns */
 svg {
     cursor: pointer;
@@ -92,5 +98,6 @@ svg {
       max-height: 75%;
 
 }
+
  }
  

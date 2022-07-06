@@ -1,0 +1,10 @@
+/* h1{
+ color: (aqua,pink)  
+} */
+
+section + p {
+    color: aqua;
+    /* transform: translateY(-100px); */
+    background-repeat: no-repeat;
+    font-size: -1rem;
+}

@@ -1,0 +1,31 @@
+.modal {
+    width: 40vw;
+    height: 40vh;
+    padding: 16px 32px;
+    border: black solid 1px;
+    position: absolute;
+    transform: translate(50%, 50%);
+    /* visibility: hidden; */
+    transition: transform(2s);
+    opacity: 0%;
+  }
+  
+  .modal.open{
+    opacity: 100%;
+  }
+  
+  btn{
+    border: 1px black solid;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    border-radius: 5px;
+    min-width: 50px;
+    max-width: auto;
+    min-height: 10px auto;
+    padding: .5rem;
+  }
+  
+  btn:hover{
+    background-color: hsl(0, 0%, 50%, 50%);
+  }
